@@ -7,15 +7,19 @@ inventoryItem.forEach(function (selectedItem) {
     const invItem = selectedItem.querySelector(".inventory-item");
     invItem.addEventListener('click', swapItem);
     document.addEventListener('keypress', keyTrigger);
-    document.addEventListener('wheel', scrollFunc, { passive: false });
-    
+    document.addEventListener('wheel', scrollFunc);
+    document.addEventListener('scroll', scrollCheck);
+
+    function scrollCheck(event) {
+        console.log(event);
+    }
     // Scrolling
     let scrollNum = 1;
     function scrollFunc(event) {
         // Increase and decrease by deltaY wheel
-        if (event.deltaY === -102) {
+        if (event.deltaY < 0) {
             scrollNum += event.deltaMode -1;
-        } else if (event.deltaY === 102) {
+        } else if (event.deltaY > 0) {
             scrollNum -= event.deltaMode -1;
         }
 
