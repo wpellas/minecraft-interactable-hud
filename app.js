@@ -35,7 +35,6 @@ inventoryItem.forEach(function (selectedItem) {
             } else if (item !== selectedItem) { 
                 item.classList.remove("selected");
             }
-
     });
         console.log('scrolled to number:', scrollNum);
     }
@@ -56,7 +55,6 @@ inventoryItem.forEach(function (selectedItem) {
                 item.classList.remove("selected");
             }
         })
-        
     };
 
     // Mouse click
@@ -70,8 +68,6 @@ inventoryItem.forEach(function (selectedItem) {
                 equipped.style.backgroundImage = ` url(src/${dataId}.webp)`
             }
         });
-        
-        
         console.log("pressed:", this);
     };
 });
